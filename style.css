@@ -1,0 +1,15 @@
+body {
+    font-family: serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 25px;
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 24px;
+}
