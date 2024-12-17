@@ -1,16 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリックカウンターゲーム</title>
+    <style>
+        body {
+            font-family: serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 25px;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
 <body>
-    <h1>Click Counter Game</h1>
-    <button id="clickButton">Click me!</button>
+    <h1>クリックカウンターゲーム</h1>
+    <button id="clickButton">私をクリックしてね！</button>
     <div id="score">Score: 0</div>
     <script>
         let score = 0;
-        let timeLeft = 10;
+        let timeLeft = 5;
         const button = document.getElementById('clickButton');
         const scoreDisplay = document.getElementById('score');
 
         button.addEventListener('click', () => {
             score++;
-            scoreDisplay.textContent = `Score: ${score}`;
+            score++;
+            scoreDisplay.textContent = `スコア: ${score}`;
         });
 
         const timer = setInterval(() => {
@@ -18,7 +41,7 @@
             if (timeLeft <= 0) {
                 clearInterval(timer);
                 button.disabled = true;
-                alert(`Time's up! Your score is ${score}.`);
+                alert(`時間切れ！あなたのスコアは ${score}.`);
             }
         }, 1000);
     </script>
