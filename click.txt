@@ -1,0 +1,26 @@
+<body>
+    <h1>Click Counter Game</h1>
+    <button id="clickButton">Click me!</button>
+    <div id="score">Score: 0</div>
+    <script>
+        let score = 0;
+        let timeLeft = 10;
+        const button = document.getElementById('clickButton');
+        const scoreDisplay = document.getElementById('score');
+
+        button.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+        });
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                button.disabled = true;
+                alert(`Time's up! Your score is ${score}.`);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
